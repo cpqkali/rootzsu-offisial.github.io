@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rootzsu Services | Официальный сайт</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>Rootzsu Services</h1>
+        <p>Официальный сайт</p>
+    </div>
+</header>
+
+<nav>
+    <div class="container">
+        <a href="#main" class="nav-link active" data-section="main">Главная</a>
+        <a href="#services" class="nav-link" data-section="services">Прайс-лист</a>
+        <a href="#login" class="nav-link" data-section="login">Личный кабинет</a>
+        <a href="#admin" class="nav-link" data-section="admin">Админ-панель</a>
+        <a href="https://t.me/rootzsuBot" target="_blank" class="nav-link special">🚀 Запустить бота</a>
+    </div>
+</nav>
+
+<main class="active" id="main">
+    <section class="container welcome-section">
+        <div class="welcome-card">
+            <h2>⭐️ Добро пожаловать!</h2>
+            <p>Здесь вы можете ознакомиться с нашими услугами, ценами и сделать заказ через нашего бота.</p>
+            <div class="social-links">
+                <a href="https://t.me/rootzsuBot" target="_blank">🤖 Наш бот</a>
+                <a href="https://t.me/rootzsu" target="_blank">📢 Наш канал</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<main id="services">
+    <section class="container">
+        <h2>📋 Прайс-лист</h2>
+        <div class="services-grid"></div>
+    </section>
+</main>
+
+<main id="login">
+    <section class="container login-section">
+        <h2>👤 Личный кабинет</h2>
+        <div id="login-form-container" class="form-card">
+            <p>Войдите, используя ваш Telegram ID.</p>
+            <form id="login-form">
+                <label for="tg-id">Telegram ID</label>
+                <input type="text" id="tg-id" placeholder="Ваш Telegram ID" required>
+                <button type="submit">Войти</button>
+            </form>
+        </div>
+        <div id="user-dashboard" class="user-dashboard" style="display: none;">
+            <h3>Добро пожаловать, <span id="user-name"></span>!</h3>
+            <h4>Ваши заказы:</h4>
+            <div id="user-orders-container" class="orders-list">
+                <p class="loading-message">Загрузка ваших заказов...</p>
+            </div>
+            <button id="logout-button">Выйти</button>
+        </div>
+    </section>
+</main>
+
+<main id="admin">
+    <section class="container admin-section">
+        <h2>👑 Админ-панель</h2>
+        <div id="admin-login-container" class="form-card">
+            <p>Вход для администраторов. Используйте ваш Telegram ID.</p>
+            <form id="admin-login-form">
+                <label for="admin-id">Telegram ID администратора</label>
+                <input type="text" id="admin-id" placeholder="Ваш Telegram ID" required>
+                <button type="submit">Войти</button>
+            </form>
+        </div>
+        <div id="admin-dashboard" class="admin-dashboard" style="display: none;">
+            <h3>Добро пожаловать в админ-панель!</h3>
+            <h4>Статистика:</h4>
+            <p>Всего пользователей: <span id="stats-users">...</span></p>
+            <p>Всего заказов: <span id="stats-orders">...</span></p>
+            <button id="admin-manage-services-button">Управление услугами</button>
+            <button id="admin-logout-button">Выйти</button>
+        </div>
+    </section>
+</main>
+
+<main id="manage-services" style="display: none;">
+    <section class="container">
+        <h2>🔧 Управление услугами</h2>
+        <div class="services-management">
+            <div class="management-card">
+                <h3>Добавить услугу</h3>
+                <form id="add-service-form">
+                    <label for="new-service-name">Название</label>
+                    <input type="text" id="new-service-name" required>
+                    <label for="new-service-desc">Описание</label>
+                    <textarea id="new-service-desc" required></textarea>
+                    <label for="new-service-price-usd">Цена (USD)</label>
+                    <input type="number" step="0.01" id="new-service-price-usd" required>
+                    <label for="new-service-price-btc">Цена (BTC)</label>
+                    <input type="number" step="0.00001" id="new-service-price-btc" required>
+                    <label for="new-service-price-stars">Цена (STARS)</label>
+                    <input type="number" id="new-service-price-stars" required>
+                    <button type="submit">Добавить</button>
+                </form>
+            </div>
+            <div class="management-card">
+                <h3>Удалить услугу</h3>
+                <form id="delete-service-form">
+                    <label for="delete-service-id">ID услуги</label>
+                    <input type="number" id="delete-service-id" required>
+                    <button type="submit">Удалить</button>
+                </form>
+            </div>
+        </div>
+        <button id="back-to-admin-panel">⬅️ Назад в админку</button>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>© 2025 Rootzsu Services. Все права защищены.</p>
+        <p>Разработано <a href="https://t.me/alpha_rootzsu" target="_blank">@alpha_rootzsu</a></p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
